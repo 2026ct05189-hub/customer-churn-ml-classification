@@ -1,0 +1,22 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+env/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# NOTE: We intentionally DO track the following (the assignment requires them):
+#   model/*.joblib   -> saved trained models
+#   test_data.csv    -> held-out test set
+#   outputs/*.png    -> result visualizations
+#   data/telco_churn_raw.csv -> the source dataset
