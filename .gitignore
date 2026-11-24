@@ -19,4 +19,4 @@ Thumbs.db
 #   model/*.joblib   -> saved trained models
 #   test_data.csv    -> held-out test set
 #   outputs/*.png    -> result visualizations
-#   data/telco_churn_raw.csv -> the source dataset
+#   data/telco_customers.csv -> the source dataset
