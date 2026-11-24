@@ -120,6 +120,12 @@ python model/score_customers.py
 Or open **`model/telco_churn_analysis.ipynb`** in Jupyter and choose
 **Kernel → Restart & Run All** (recommended for the Virtual Lab screenshot).
 
+`requirements.txt` pins the exact library versions used (tested with Python 3.14).
+Logistic Regression, Decision Tree, kNN and Naive Bayes reproduce the results below
+exactly on any machine. The Random Forest can differ in the 2nd–3rd decimal place
+between operating systems (e.g. Windows vs. Linux/macOS) because of platform-level
+differences in its random sampling; the results reported here were produced on Windows.
+
 ---
 
 ## Preprocessing (Step 2)
