@@ -255,22 +255,9 @@ real churner usually costs more than a false alarm.
 ## Reproducibility & Academic Integrity
 
 - A fixed random seed (`random_state = 2026`) is used for the split and all
-  stochastic models, so results are fully reproducible.
+  stochastic models, so results are reproducible (see the Random Forest note under
+  "How to Run").
 - All learned preprocessing is fitted on the training set only (via `Pipeline`),
   preventing data leakage.
 - A 5-fold cross-validation check confirms the hold-out results are stable.
 - Dataset source and download URL are documented above for verification.
-
----
-
-## Push to GitHub
-
-```bash
-cd customer-churn-ml-classification
-git init
-git add .
-git commit -m "Telco churn classification: preprocessing, 5 weighted models, evaluation"
-git branch -M main
-git remote add origin https://github.com/<your-username>/customer-churn-ml-classification.git
-git push -u origin main
-```
