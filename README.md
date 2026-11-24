@@ -74,9 +74,7 @@ imbalance-robust metrics (AUC, F1, MCC).
 
 ## 3. GitHub Repository Link
 
-> **Repository:** `https://github.com/<your-username>/customer-churn-ml-classification`
->
-> _(Replace with your actual link after pushing — see "Push to GitHub" below.)_
+> **Repository:** [https://github.com/2026ct05189-hub/customer-churn-ml-classification](https://github.com/2026ct05189-hub/customer-churn-ml-classification)
 
 ### Repository structure
 ```
