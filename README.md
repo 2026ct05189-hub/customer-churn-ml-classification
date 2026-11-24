@@ -124,7 +124,7 @@ Or open **`model/telco_churn_analysis.ipynb`** in Jupyter and choose
 Logistic Regression, Decision Tree, kNN and Naive Bayes reproduce the results below
 exactly on any machine. The Random Forest can differ in the 2nd–3rd decimal place
 between operating systems (e.g. Windows vs. Linux/macOS) because of platform-level
-differences in its random sampling; the results reported here were produced on Windows.
+differences in its random sampling; the results reported here were produced on macOS.
 
 ---
 
@@ -175,10 +175,10 @@ All metrics are computed on the **held-out 20% test set** (reproducible with
 | ML Model Name | Accuracy | AUC | Precision | Recall | F1 | MCC |
 |---|---|---|---|---|---|---|
 | **Logistic Regression** | 0.7488 | 0.8407 | 0.5167 | 0.7903 | 0.6249 | 0.4711 |
-| **Decision Tree** | 0.7395 | 0.8189 | 0.5051 | **0.7984** | 0.6188 | 0.4621 |
+| **Decision Tree** | 0.7395 | 0.8189 | 0.5051 | 0.7984 | 0.6188 | 0.4621 |
 | **kNN** | 0.7694 | 0.7974 | **0.5736** | 0.5027 | 0.5358 | 0.3848 |
-| **Naive Bayes** | 0.6996 | 0.8165 | 0.4626 | 0.8306 | 0.5942 | 0.4268 |
-| **Random Forest (Ensemble)** | **0.7801** | **0.8448** | 0.5636 | 0.7500 | **0.6436** | **0.4996** |
+| **Naive Bayes** | 0.6996 | 0.8165 | 0.4626 | **0.8306** | 0.5942 | 0.4268 |
+| **Random Forest (Ensemble)** | **0.7758** | **0.8445** | 0.5580 | 0.7366 | **0.6350** | **0.4872** |
 
 > **Bold** = best value in that column.
 
@@ -221,12 +221,12 @@ real churner usually costs more than a false alarm.
 
 | ML Model Name | Observation about model performance |
 |---|---|
-| **Logistic Regression** | Excellent all-rounder: tied-best AUC (0.841) and strong recall (0.790). Class weighting trades accuracy (0.749) for catching far more churners. Simple, fast and interpretable — the relationship is largely linear after encoding/scaling. |
-| **Decision Tree** | **Highest recall (0.798)** — it flags the most churners — but the lowest precision among the tree-based models, so accuracy (0.740) suffers. Depth was capped at 7 with a leaf minimum to prevent overfitting. Interpretable but less stable than the ensemble. |
+| **Logistic Regression** | Excellent all-rounder: second-best AUC (0.841, just behind the Random Forest) and strong recall (0.790). Class weighting trades accuracy (0.749) for catching far more churners. Simple, fast and interpretable — the relationship is largely linear after encoding/scaling. |
+| **Decision Tree** | **Second-highest recall (0.798)**, after Naive Bayes — but lower precision (0.505) than the Random Forest, so accuracy (0.740) suffers. Depth was capped at 7 with a leaf minimum to prevent overfitting. Interpretable but less stable than the ensemble. |
 | **kNN** | A different trade-off: **highest precision (0.574)** but by far the **lowest recall (0.503)** and AUC (0.797). Because it has no class-weight option it stays conservative, and the one-hot feature space (the "curse of dimensionality") also hurts distance-based methods. |
-| **Naive Bayes** | High recall (0.831) but weak precision (0.463), giving the lowest accuracy (0.700). Its "all features independent" assumption doesn't hold here (e.g. the service columns are related), which hurts precision. Good if the goal is simply "don't miss churners". |
-| **Random Forest (Ensemble)** | **Best overall** — top AUC (0.845), F1 (0.644), MCC (0.500) and accuracy (0.780), with strong recall (0.750). Averaging many de-correlated trees gives the best balance of catching churners while staying precise. The clear winner for this dataset. |
-| **Overall Winner for this dataset** | **🏆 Random Forest (Ensemble)** — leads on AUC, F1, MCC and accuracy. If the only goal were to *catch as many churners as possible* (max recall), the **Decision Tree** or **Naive Bayes** would edge it out, but the Random Forest gives the best overall balance. |
+| **Naive Bayes** | **Highest recall (0.831)** — it flags the most churners — but weak precision (0.463), giving the lowest accuracy (0.700). Its "all features independent" assumption doesn't hold here (e.g. the service columns are related), which hurts precision. Good if the goal is simply "don't miss churners". |
+| **Random Forest (Ensemble)** | **Best overall** — top AUC (0.845), F1 (0.635), MCC (0.487) and accuracy (0.776), with solid recall (0.737). Averaging many de-correlated trees gives the best balance of catching churners while staying precise. The clear winner for this dataset. |
+| **Overall Winner for this dataset** | **🏆 Random Forest (Ensemble)** — leads on AUC, F1, MCC and accuracy. If the only goal were to *catch as many churners as possible* (max recall), **Naive Bayes** or the **Decision Tree** would edge it out, but the Random Forest gives the best overall balance. |
 
 ### Key takeaways
 - **Accuracy alone is misleading** here: a "predict everyone stays" baseline scores
