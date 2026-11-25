@@ -241,14 +241,16 @@ real churner usually costs more than a false alarm.
 
 ## 7. Virtual Lab Execution Screenshot
 
-> 📸 **Add your screenshot here** after running the project on the BITS Virtual Lab.
->
-> ```markdown
-> ![BITS Virtual Lab Execution](outputs/virtual_lab_screenshot.png)
-> ```
->
-> Suggested: run `model/telco_churn_analysis.ipynb` with **Restart & Run All** and
-> capture the leaderboard + comparison chart.
+`model/telco_churn_analysis.ipynb` executed in Google Colab from the BITS Virtual Lab
+session (Lab 21505, user `s2026ct05189`).
+
+**Notebook opened in the Virtual Lab:**
+
+![BITS Virtual Lab Execution - notebook opened](outputs/virtual_lab_screenshot_1.png)
+
+**Notebook executed (confusion matrices output):**
+
+![BITS Virtual Lab Execution - notebook executed](outputs/virtual_lab_screenshot_2.png)
 
 ---
 
